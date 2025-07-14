@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pickup Line Vault</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="light">
+  <header>
+    <h1>💬 Pickup Line Vault</h1>
+    <button class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">🌙</button>
+  </header>
+
+  <section id="controls" aria-label="Filter and navigation controls">
+    <form id="filterForm" role="search" aria-describedby="filterDesc">
+      <p id="filterDesc" class="sr-only">Filter pickup lines by category or search keyword</p>
+
+      <label for="categoryFilter" class="visually-hidden">Select category</label>
+      <select id="categoryFilter" name="category">
+        <option value="">All Categories</option>
+        <option value="Funny">Funny</option>
+        <option value="Cute">Cute</option>
+        <option value="Romantic">Romantic</option>
+        <option value="Cheesy">Cheesy</option>
+        <option value="Nerdy">Nerdy</option>
+      </select>
+
+      <label for="searchBox" class="visually-hidden">Search pickup lines</label>
+      <input
+        type="search"
+        id="searchBox"
+        name="search"
+        placeholder="Search pickup lines..."
+        autocomplete="off"
+      />
+    </form>
+
+    <nav class="pagination-buttons" aria-label="Pagination navigation">
+      <button id="prevBtn" aria-disabled="true">⏮ Previous</button>
+      <button id="nextBtn">Next ⏭</button>
+    </nav>
+  </section>
+
+  <main id="pickup-lines" role="region" aria-live="polite" aria-label="Pickup lines container">
+    <p class="loader">Loading pickup lines...</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

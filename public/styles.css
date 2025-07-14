@@ -1,0 +1,210 @@
+/* === CSS RESET & GLOBALS === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --primary-color: #ff4081;
+  --bg-light: #f9f9fb;
+  --card-bg: #fff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] {
+  --bg-light: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --text-color: #ffffff;
+  --shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background: var(--bg-light);
+  /* color: var(--text-color); */
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* === HEADER === */
+header {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+/* === DARK MODE TOGGLE button === */
+.dark-toggle {
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+/* === CONTROLS SECTION === */
+#controls {
+  width: 100%;
+  max-width: 960px;
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#filterForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex: 1;
+}
+
+select,
+input[type="search"] {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  color: #333;
+  flex: 1;
+  min-width: 200px;
+}
+
+[data-theme="dark"] select,
+[data-theme="dark"] input[type="search"] {
+  background: #333;
+  color: white;
+  border: 1px solid #666;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination-buttons button {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pagination-buttons button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* === PICKUP LINES SECTION === */
+#pickup-lines {
+  width: 100%;
+  max-width: 960px;
+}
+
+.line-card {
+  background: var(--card-bg);
+  border: 1px solid #dc2c2c;
+  border-radius: 12px;
+  /* box-shadow: var(--shadow); */
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.line-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.line-text {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+
+/* === ACTION BUTTONS === */
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.actions button:hover {
+  background-color: #5851db;
+}
+
+/* === LOADER / MESSAGE === */
+.loader {
+  font-size: 1rem;
+  color: #888;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* === ACCESSIBILITY HELPERS === */
+.visually-hidden,
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  #controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pagination-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
