@@ -31,7 +31,7 @@ A fun, responsive web app to browse, search, and filter pickup lines by category
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/pickup-line-vault.git
+git clone https://github.com/BISHOW03/pickup-line-vault.git
 cd pickup-line-vault
 ```
 
@@ -74,9 +74,9 @@ Visit: http://localhost:3000
 - │   └── pickuplines.js   # API routes
 - └── README.md
 ## 📸 Screenshots
-- [light-mode](light.png)
+- ![light-mode](light.png)
 
-- [Dark-mode](dark.png)
+- ![Dark-mode](dark.png)
 
 ## 🛡 Security Notes
 .env and node_modules/ are excluded via .gitignore
